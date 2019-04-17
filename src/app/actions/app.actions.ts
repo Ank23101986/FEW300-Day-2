@@ -9,4 +9,11 @@ export class ApplicationStarted implements Action {
   }
 }
 
-export type Actions = ApplicationStarted;
+export const APPLICATION_ERROR = '[application] error';
+export class ApplicationError implements Action {
+  readonly type = APPLICATION_ERROR;
+  constructor(public message: string, public feature: string) { }
+}
+
+
+export type AppActions = ApplicationStarted | ApplicationError;
